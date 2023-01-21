@@ -22,14 +22,13 @@ const CreatePost = () => {
   const handleSurpriseMe = () => {
     const randomPrompt = getRandomPrompt(form.prompt);
     setForm({ ...form, prompt: randomPrompt });
-	
   };
 
   const generateImage = async () => {
     if (form.prompt) {
       try {
         setGeneratingImg(true);
-        const response = await fetch('https://dalle-arbb.onrender.com/api/v1/dalle', {
+        const response = await fetch('https://dall-e-nhpv.onrender.com/api/v1/dalle', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -100,10 +99,10 @@ const CreatePost = () => {
             labelName="Prompt"
             type="text"
             name="prompt"
+            placeholder="An Impressionist oil painting of sunflowers in a purple vase…"
             value={form.prompt}
             handleChange={handleChange}
             isSurpriseMe
-            placeholder="A baby panda powered by code creating a clone of itself."
             handleSurpriseMe={handleSurpriseMe}
           />
 
